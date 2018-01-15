@@ -1,0 +1,79 @@
+{
+  "browserlist": [
+    "last 2 versions",
+    "ie >= 11",
+    "> 5%"
+  ],
+  "dependencies": {
+    "babel-plugin-resolver": "^1.1.0",
+    "babel-resolver": "^1.1.0",
+    "bluebird": "^3.4.6",
+    "copy-webpack-plugin": "^4.0.1",
+    "dotenv": "^4.0.0",
+    "electrode-archetype-react-app": "^3.2.2",
+    "electrode-archetype-react-app-dev": "^3.2.2",
+    "electrode-bundle-analyzer": "^1.0.0",
+    "electrode-cdn-file-loader": "^1.1.0",
+    "electrode-confippet": "^1.5.0",
+    "electrode-electrify": "^1.2.2",
+    "electrode-electrify-react-component": "^4.4.13",
+    "electrode-react-ssr-caching": "^0.1.6",
+    "electrode-react-webapp": "^2.0.0",
+    "electrode-redux-router-engine": "^1.4.6",
+    "electrode-webpack-reporter": "^0.3.12",
+    "electron-to-chromium": "^1.3.21",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "express": "^4.0.0",
+    "file-loader": "^0.11.2",
+    "http-proxy-middleware": "^0.17.4",
+    "lodash": "^4.17.4",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "2.2.0",
+    "resolve-url-loader": "^2.1.0",
+    "webpack": "^3.0.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "fetch-mock": "^5.13.1",
+    "jsx-chai": "^4.0.0",
+    "karma-intl-shim": "^1.0.3",
+    "sinon-as-promised": "^4.0.3"
+  },
+  "engines": {
+    "node": "^4.x.x || ^6.x.x",
+    "npm": "3.x.x"
+  },
+  "files": [
+    "server",
+    "client",
+    "test"
+  ],
+  "keywords": [
+    "react",
+    "universal react",
+    "universal js",
+    "es2015",
+    "charity"
+  ],
+  "main": "src/server/index.js",
+  "name": "chimp",
+  "peerDependencies": {
+    "react": "^15.4.2",
+    "react-router": "^3.0.5",
+    "redux": "^3.6.0",
+    "lodash": "^4.17.4"
+  },
+  "private": true,
+  "scripts": {
+    "build": "clap build",
+    "dev": "clap dev",
+    "start": "clap server",
+    "hot": "clap hot",
+    "test": "clap test-ci",
+    "coverage": "clap check",
+    "heroku-postbuild": "clap build"
+  },
+  "version": "1.0.0"
+}

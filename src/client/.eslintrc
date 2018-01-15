@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    // overwriting the indent ammount to 4 instead of airbnb's 2
+    "indent": [2, 4],
+    "no-unused-expressions": [
+        "error", { "allowShortCircuit": true },
+    ],
+    "no-underscore-dangling": "off",
+    "no-plusplus": "off",
+    "no-case-declarations": "off",
+    "import/extensions": [
+        "error",
+        {
+            "js": "never",
+            "jsx": "never",
+        },
+    ],
+    "react/jsx-indent-props": [2, 4],
+    "react/jsx-indent": [2, 4],
+
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0
+
+  },
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true,
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}
