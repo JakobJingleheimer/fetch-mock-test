@@ -12,10 +12,10 @@ function send(opts) {
         });
 
     function reqExecutor(resolve, reject) {
-        // const req = prepReq(opts);
+        const req = prepReq(opts);
 
-        // const call = fetch(req)
-        const call = fetch(opts.endpoint)
+        const call = fetch(req)
+        // const call = fetch(opts.endpoint)
             .then((rsp) => {
                 if (rsp.ok) return rsp;
 console.log('Rsp NOT okay');
