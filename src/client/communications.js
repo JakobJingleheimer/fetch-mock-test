@@ -6,6 +6,8 @@ function send(opts) {
         });
 
     function reqExecutor(resolve, reject) {
+        const req = new Request(); // ← this breaks fetch-mock
+
         const call = fetch(opts.endpoint)
             .then((rsp) => {
                 if (rsp.ok) return rsp;
