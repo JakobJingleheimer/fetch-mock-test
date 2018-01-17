@@ -1,3 +1,9 @@
+function prepReq(opts) {
+    return new Request(opts.endpoint, {
+        method: 'GET',
+    });
+}
+
 function send(opts) {
     return new Promise(reqExecutor)
         .catch((err) => {
@@ -6,8 +12,9 @@ function send(opts) {
         });
 
     function reqExecutor(resolve, reject) {
-        const req = new Request(); // ← this breaks fetch-mock
+        // const req = prepReq(opts);
 
+        // const call = fetch(req)
         const call = fetch(opts.endpoint)
             .then((rsp) => {
                 if (rsp.ok) return rsp;
