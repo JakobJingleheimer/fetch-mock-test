@@ -1,5 +1,8 @@
 require('dotenv').config();
 const path = require('path');
+
+const { inspect } = require('util');
+
 module.exports = function (config, settings){
     const entryFile = path.resolve(__dirname, './entry.js');
 
@@ -8,5 +11,7 @@ module.exports = function (config, settings){
     settings.preprocessors = {};
     settings.preprocessors[entryFile] = ['webpack', 'sourcemap'];
 
-    config.set(settings)
+console.log(inspect(settings, {colors: true, depth: null}))
+
+    config.set(settings);
 }

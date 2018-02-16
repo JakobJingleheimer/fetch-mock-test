@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 
-import TestCmpt from './TestComponentWithFetch';
+import TestCmpt from './TestComponent';
 
 describe('Tooltip', () => {
     it('should run', function() {

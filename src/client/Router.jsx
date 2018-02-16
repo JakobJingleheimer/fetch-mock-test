@@ -6,7 +6,7 @@ import {
 import _ from 'lodash';
 
 // Views
-import DummyView from 'client/Tooltip';
+import TestComponent from './TestComponent';
 
 const SiteRouter = () => (
     <Router
@@ -14,7 +14,7 @@ const SiteRouter = () => (
         routes={
             [{
                 path: '/',
-                component: DummyView,
+                component: TestComponent,
                 methods,
             }]
         }
