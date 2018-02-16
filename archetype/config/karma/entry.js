@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-require("babel-polyfill");
+require('babel-polyfill');
 
 /**
  * Test setup for client-side tests.
@@ -10,10 +10,10 @@ require("babel-polyfill");
  * - Browser tests: `http://localhost:3000/test/client/test.html`
  */
 /*globals window:false*/
-var chai = require("chai");
-var sinonChai = require("sinon-chai");
-var chaiShallowly = require("chai-shallowly");
-var jsxChai = require("jsx-chai").default;
+var chai = require('chai');
+var sinonChai = require('sinon-chai');
+var chaiShallowly = require('chai-shallowly');
+var jsxChai = require('jsx-chai').default;
 var Promise = require('bluebird');
 require('sinon-as-promised')(Promise);
 /*
@@ -22,18 +22,7 @@ require('sinon-as-promised')(Promise);
  * removed in the future and is being tracked by
  * https://gecgithub01.walmart.com/electrode/electrode-archetype-react-component/issues/10
  */
-window.sinon = require("sinon");
-
-require('isomorphic-fetch');
-var fetchMock = require('fetch-mock');
-
-// Object.assign(fetchMock.config, { Promise: Promise });
-
-// fetchMock.catch(function() { // I tried pretty much every variation of catch() and mock()
-//     console.log('\n\nFETCH MOCKER:: CATCH\n\n');
-
-//     return {};
-// });
+window.sinon = require('sinon');
 
 // --------------------------------------------------------------------------
 // Chai / Sinon / Mocha configuration.
@@ -48,13 +37,12 @@ chai.use(jsxChai);
 
 // Mocha (part of static include).
 window.mocha.setup({
-  ui: "bdd",
-  bail: false
+  ui: 'bdd',
+  bail: false,
 });
 
 // Preload test state, which is automatically picked up by the store.
-var appConfig = require('../../../config/testState.js');
-window.__PRELOADED_STATE__ = appConfig;
+window.__PRELOADED_STATE__ = {};
 
 // --------------------------------------------------------------------------
 // Bootstrap
@@ -62,11 +50,11 @@ window.__PRELOADED_STATE__ = appConfig;
 // Use webpack to include all app code _except_ the entry point so we can get
 // code coverage in the bundle, whether tested or not.
 // NOTE: No need to specify src even in src mode since webpack should handle that already
-// var srcReq = require.context("client", true, /^((?!app).)*\.jsx?$/);
+// var srcReq = require.context('client', true, /^((?!app).)*\.jsx?$/);
 // srcReq.keys().map(srcReq);
 
-// Use webpack to infer and `require` tests automatically only for test/client
-var testsReq = require.context("client", true, /\.spec.jsx?$/);
+// Use webpack to infer and `require` tests automatically
+var testsReq = require.context('client', true, /\.spec.jsx?$/);
 testsReq.keys().map(testsReq);
 
 // Only start mocha in browser.

@@ -1,4 +1,20 @@
-const baseWebPack = require('./webpack.config.base') || {}; // MUST be first
-const extendElectrodeConfig = require('./utils/extendElectrodeConfig');
+'use strict';
 
-module.exports = extendElectrodeConfig(baseWebPack);
+const webpack = require('webpack');
+
+
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: 'null-loader',
+            },
+        ],
+    },
+    plugins: [
+        new webpack.EnvironmentPlugin(['NODE_ENV']),
+        new webpack.IgnorePlugin(/\.(less|scss)$/), // ignore styles when running specs
+        new webpack.IgnorePlugin(/client\/utils/), // ignore polyfills
+    ],
+};
